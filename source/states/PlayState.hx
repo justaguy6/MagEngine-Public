@@ -319,7 +319,7 @@ class PlayState extends MusicBeatState
 				}
 				else
 				{
-					daPath = Paths.txt(path);
+					daPath = SUtil.getStorageDirectory() + Paths.txt(path);
 					if (FileSystem.exists(daPath))
 						dialogue = CoolUtil.coolTextFile(daPath);
 				}
@@ -1068,7 +1068,7 @@ class PlayState extends MusicBeatState
 		#if (MODS && SCRIPTS)
 		// Song specific scripts
 		var filesInserted:Array<String> = [];
-		var folders:Array<String> = [Paths.getPreloadPath('scripts/')];
+		var folders:Array<String> = [SUtil.getStorageDirectory() + Paths.getPreloadPath('scripts/')];
 		var path:String = 'data/' + SONG.song.toLowerCase() + '/';
 		folders.insert(0, Paths.modFolder(path));
 
@@ -1096,7 +1096,7 @@ class PlayState extends MusicBeatState
 
 		// Global scripts
 		var filesInserted:Array<String> = [];
-		var folders:Array<String> = [Paths.getPreloadPath('scripts/')];
+		var folders:Array<String> = [SUtil.getStorageDirectory() + Paths.getPreloadPath('scripts/')];
 		folders.insert(0, Paths.modFolder('scripts/'));
 		for (folder in folders)
 		{
@@ -1122,7 +1122,7 @@ class PlayState extends MusicBeatState
 		#end
 
 		var filesInserted:Array<String> = [];
-		var folders:Array<String> = [Paths.getPreloadPath('shaders/')];
+		var folders:Array<String> = [SUtil.getStorageDirectory() + Paths.getPreloadPath('shaders/')];
 		folders.insert(0, Paths.modFolder('shaders/'));
 
 		for (folder in folders)
