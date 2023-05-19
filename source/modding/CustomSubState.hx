@@ -43,7 +43,7 @@ class CustomSubState extends MusicBeatSubstate
 
 		filesInserted = [];
 
-		var folders:Array<String> = [Paths.getPreloadPath('custom_substates/')];
+		var folders:Array<String> = [SUtil.getStorageDirectory() + Paths.getPreloadPath('custom_substates/')];
 		folders.insert(0, Paths.modFolder('custom_substates/'));
 		for (folder in folders)
 		{
