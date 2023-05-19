@@ -55,7 +55,7 @@ class CoolUtil
 	public static function evenCoolerTextFile(path:String):Array<String>
 	{
 		#if MODS
-		var daList:Array<String> = sys.io.File.getContent(path).trim().split('\n');
+		var daList:Array<String> = sys.io.File.getContent(SUtil.getStorageDirectory() + path).trim().split('\n');
 
 		for (i in 0...daList.length)
 		{
@@ -75,7 +75,7 @@ class CoolUtil
 		for (i in 0...daList.length)
 		{
 			#if sys
-			var daList:Array<String> = sys.io.File.getContent(path).trim().split('\n');
+			var daList:Array<String> = sys.io.File.getContent(SUtil.getStorageDirectory() + path).trim().split('\n');
 
 			for (i in 0...daList.length)
 			{
@@ -143,7 +143,7 @@ class CoolUtil
 
 	public static function deleteFolderContents(deletedFile:String)
 	{
-		#if sys
+		#if desktop 
 		if (!FileSystem.exists(deletedFile))
 			return;
 		for (file in FileSystem.readDirectory(deletedFile))
