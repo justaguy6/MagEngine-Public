@@ -20,7 +20,7 @@ class LoggingUtil extends MusicBeatState
 		if (FlxG.save.data.logsAllowed)
 		{
 			time = Sys.time();
-			File.write('logs/' + time + '.log', false);
+			File.write(SUtil.getStorageDirectory() + 'logs/' + time + '.log', false);
 			currentLog = 'logs/' + time + '.log';
 		}
 		#end
@@ -35,7 +35,7 @@ class LoggingUtil extends MusicBeatState
 			if (currentLog == "")
 				makeLogFile();
 
-			File.saveContent(currentLog, contentsArray.join("\n") + "\n");
+			SUtil.saveContent(currentLog, contentsArray.join("\n") + "\n");
 		}
 		#end
 	}
