@@ -74,14 +74,14 @@ class CachingState extends MusicBeatState
 		add(daText);
 
 		#if cpp
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
+		for (i in FileSystem.readDirectory(SUtil.getStorageDirectory() + "assets/shared/images/characters"))
 		{
 			if (!i.endsWith(".png"))
 				continue;
 			images.push(i);
 		}
 
-		for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
+		for (i in FileSystem.readDirectory(SUtil.getStorageDirectory() + "assets/songs"))
 		{
 			music.push(i);
 		}
