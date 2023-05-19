@@ -14,10 +14,10 @@ import animateatlas.displayobject.SpriteMovieClip;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
-#if desktop
+#if sys
 import sys.FileSystem;
 import sys.io.File;
-#else
+#elseif desktop 
 import js.html.FileSystem;
 import js.html.File;
 #end
@@ -53,8 +53,8 @@ class AtlasFrameMaker extends FlxFramesCollection
 			return null;
 		}
 
-		var animationData:AnimationData = Json.parse(Assets.getText('assets/${library != "preload" ? '$library/' : ""}images/$key/Animation.json'));
-		var atlasData:AtlasData = Json.parse(Assets.getText('assets/${library != "preload" ? '$library/' : ""}images/$key/spritemap.json')
+		var animationData:AnimationData = Json.parse(File.getContent(SUtil.getStorageDirectory() + 'assets/${library != "preload" ? '$library/' : ""}images/$key/Animation.json'));
+		var atlasData:AtlasData = Json.parse(File.getContent(SUtil.getStorageDirectory() + 'assets/${library != "preload" ? '$library/' : ""}images/$key/spritemap.json')
 			.replace("\uFEFF", ""));
 
 		var graphic:FlxGraphic = FlxGraphic.fromAssetKey(Paths.image('$key/spritemap'));
