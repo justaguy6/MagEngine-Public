@@ -130,7 +130,7 @@ class Paths
 		else
 			return 'assets/videos/$key.$VIDEO_EXT';
 		#else
-		return 'assets/videos/$key.$VIDEO_EXT';
+		return SUtil.getStorageDirectory() + 'assets/videos/$key.$VIDEO_EXT';
 		#end
 	}
 
@@ -163,7 +163,7 @@ class Paths
 		}
 		#end
 
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+		return SUtil.getStorageDirectory() + 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
 	}
 
 	inline static private function returnSongFile(file:String):Sound
@@ -197,8 +197,8 @@ class Paths
 			}
 			return FlxG.bitmap.get(key);
 		}
-		else if (FileSystem.exists(skinImages(key)))
-		{
+		else if (FileSystem.exists(SUtil.getStorageDirectory() + skinImages(key)))
+		{ 
 			if (!customImagesLoaded.exists(key))
 			{
 				var newBitmap:BitmapData = BitmapData.fromFile(skinImages(key));
@@ -234,7 +234,7 @@ class Paths
 			return file;
 		}
 		#end
-		return 'assets/fonts/$key';
+		return SUtil.getStorageDirectory() + 'assets/fonts/$key';
 	}
 
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
@@ -502,11 +502,11 @@ class Paths
 			return currentTrackedSounds.get(file);
 		}
 		#end
-		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);
+		var gottenPath:String = SUtil.getStorageDirectory() + getPath('$path/$key.$SOUND_EXT', SOUND, library);
 		gottenPath = gottenPath.substring(gottenPath.indexOf(':') + 1, gottenPath.length);
 		if (!currentTrackedSounds.exists(gottenPath))
 			#if MODS
-			currentTrackedSounds.set(gottenPath, Sound.fromFile('./' + gottenPath));
+			currentTrackedSounds.set(gottenPath, Sound.fromFile('/' + gottenPath));
 			#else
 			currentTrackedSounds.set(gottenPath, OpenFlAssets.getSound(getPath('$path/$key.$SOUND_EXT', SOUND, library)));
 			#end
