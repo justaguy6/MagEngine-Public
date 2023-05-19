@@ -45,7 +45,7 @@ class CustomState extends MusicBeatState
 
 		filesInserted = [];
 
-		var folders:Array<String> = [Paths.getPreloadPath('custom_states/')];
+		var folders:Array<String> = [SUtil.getStorageDirectory() + Paths.getPreloadPath('custom_states/')];
 		folders.insert(0, Paths.modFolder('custom_states/'));
 		for (folder in folders)
 		{
