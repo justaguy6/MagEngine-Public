@@ -94,6 +94,11 @@ class OptionsMenu extends MusicBeatState
 
 		changeSelection();
 
+		#if android
+		addVirtualPad(UP_DOWN, A_B_C);
+		virtualPad.y = -24;
+		#end
+			
 		super.create();
 	}
 
@@ -149,6 +154,14 @@ class OptionsMenu extends MusicBeatState
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				changeSelection(1);
 			}
+			#if android
+		if (virtualPad.buttonC.justPressed) {
+			#if android
+			removeVirtualPad();
+			#end
+			openSubState(new android.AndroidControlsSubState());
+		}
+		#end
 
 			if (FlxG.mouse.wheel != 0 && FlxG.save.data.mousescroll)
 			{
