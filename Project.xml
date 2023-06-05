@@ -37,7 +37,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false" />
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false" />
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -147,6 +147,7 @@
 
 	<haxelib name="flixel-ui" />
 	<haxelib name="faxe" if='switch' />
+	<haxelib name="extension-androidtools" if="android" />
 	<haxelib name="polymod" />
     <haxelib name="hxCodec" if="desktop || android" />
     <haxelib name="flixel-shadertoy-shader" />
