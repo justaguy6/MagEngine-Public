@@ -55,14 +55,14 @@
 
 	<!-- Customize these defines to your liking -->
 
-	<define name="MODS" if="desktop"/>
-	<define name="SKINS" if="desktop"/>
+	<define name="MODS" if="android"/>
+	<define name="SKINS" if="android"/>
 	<define name="SCRIPTS" unless="web" />
-	<define name="LOGS" if="desktop" />
-	<define name="CACHE" unless="windows || web" />
-	<define name="HXCODEC" if="windows" unless="32bit"/>
-	<define name="CRASH_DUMPING" if="desktop" />
-	<define name="HSCRIPT_ERRORS" if="desktop" />
+	<define name="LOGS" if="android" />
+	<define name="CACHE" unless="android || web" />
+	<define name="HXCODEC" if="android" unless="32bit"/>
+	<define name="CRASH_DUMPING" if="android" />
+	<define name="HSCRIPT_ERRORS" if="android" />
 
 	<!-- You should remove these two defines if you are making a source code mod -->
 
