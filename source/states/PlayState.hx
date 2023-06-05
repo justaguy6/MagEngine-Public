@@ -12,7 +12,7 @@ import game.Song.MidSongEvent;
 import flixel.FlxCamera;
 import flixel.addons.display.FlxRuntimeShader;
 import flixel.FlxG;
-#if desktop
+#if android
 import states.tools.StageEditor;
 import states.tools.StageEditor.LayerFile;
 import states.tools.StageEditor.StageFile;
@@ -2008,7 +2008,7 @@ class PlayState extends MusicBeatState
 	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
 	var canPause:Bool = true;
-
+        #if windows 
 	public function getCustomShader(tag:String, fromShaderToy:Bool = false):Dynamic
 	{
 		for (shader in trackedShaders)
@@ -2034,7 +2034,7 @@ class PlayState extends MusicBeatState
 		}
 		return null;
 	}
-
+        #end
 	public function openCustomState(stateName:String)
 	{
 		#if (MODS && SCRIPTS)
