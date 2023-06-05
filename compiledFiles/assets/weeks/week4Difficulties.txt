@@ -1,3 +1,0 @@
-easy
-normal
-hard
