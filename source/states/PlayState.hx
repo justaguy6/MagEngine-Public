@@ -12,7 +12,7 @@ import game.Song.MidSongEvent;
 import flixel.FlxCamera;
 import flixel.addons.display.FlxRuntimeShader;
 import flixel.FlxG;
-#if android
+#if desktop 
 import states.tools.StageEditor;
 import states.tools.StageEditor.LayerFile;
 import states.tools.StageEditor.StageFile;
