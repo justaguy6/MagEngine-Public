@@ -29,7 +29,7 @@ class SUtil
 	private static var aDir:String = null; // android dir
 	#end
 
-	public static function getPath():String
+	public static function getStorageDirectory():String
 	{
 		#if android
 		if (aDir != null && aDir.length > 0)
