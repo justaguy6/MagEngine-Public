@@ -200,9 +200,9 @@ class PlayState extends MusicBeatState
 	var tankWatchtower:WeekSevenBGSprite;
 	var tankGround:WeekSevenBGSprite;
 	var tankmanRun:FlxTypedGroup<TankmenBG>;
-
+        #if windows // so para ver aonde vai dar os erros
 	var shaderToyShaders:Array<FlxShaderToyShader> = [];
-
+        #end
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
