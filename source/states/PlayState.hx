@@ -2056,6 +2056,7 @@ class PlayState extends MusicBeatState
 			FlxG.camera.zoom = 1.2;
 		}
 
+		#if windows
 		if (shaderToyShaders != null && shaderToyShaders.length > 0)
 		{
 			for (shader in shaderToyShaders)
@@ -2063,6 +2064,7 @@ class PlayState extends MusicBeatState
 				shader.update(elapsed, FlxG.mouse);
 			}
 		}
+		 #end
 
 		#if !debug
 		perfectMode = false;
