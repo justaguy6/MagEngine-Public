@@ -35,7 +35,7 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-		#if UPDATER
+		#if windows // isso não vai funcionar nem com reza braba 
 		var rawCommand = Sys.args();
 		if (rawCommand.contains('startUpdate'))
 		{
@@ -117,7 +117,7 @@ class Main extends Sprite
 
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, #if (flixel < "5.0.0") zoom, #end framerate, framerate, skipSplash, startFullscreen));
 
-		#if !mobile
+		#if android 
 		display = new SimpleInfoDisplay(10, 3, 0xFFFFFF);
 		addChild(display);
 		#end
@@ -206,7 +206,7 @@ class Main extends Sprite
 		theMessage = theStackTrace + theMessage;
 
 		Application.current.window.alert(theMessage, e.error);
-		DiscordClient.shutdown();
+		
 		Sys.exit(1);
 	}
 	#end
