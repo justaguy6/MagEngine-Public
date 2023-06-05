@@ -104,8 +104,8 @@ class StoryMenuState extends MusicBeatState
 			weekNames = CoolUtil.coolTextFile(Paths.txt('data/weekNames'));
 		}
 		#else
-		weekthingy = CoolUtil.coolTextFile(Paths.txt('weeks/weekList'));
-		weekNames = CoolUtil.coolTextFile(Paths.txt('data/weekNames'));
+		weekthingy = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'weeks/weekList'));
+		weekNames = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'data/weekNames'));
 		#end
 
 		function getJSON(path:String):SwagWeek
@@ -150,7 +150,7 @@ class StoryMenuState extends MusicBeatState
 			weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weeksArray[curWeek] + "Difficulties"));
 		}
 		#else
-		weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weeksArray[curWeek] + "Difficulties"));
+		weekdiff = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'weeks/' + weeksArray[curWeek] + "Difficulties"));
 		#end
 
 		weekDiffs = weekdiff;
@@ -304,7 +304,7 @@ class StoryMenuState extends MusicBeatState
 			weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weeksArray[curWeek] + "Difficulties"));
 		}
 		#else
-		weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weeksArray[curWeek] + "Difficulties"));
+		weekdiff = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'weeks/' + weeksArray[curWeek] + "Difficulties"));
 		#end
 		weekDiffs = weekdiff;
 
@@ -480,7 +480,7 @@ class StoryMenuState extends MusicBeatState
 		if (rawJson == null)
 		{
 			#if sys
-			rawJson = File.getContent(Paths.cooljson('weeks/' + jsonInput)).trim();
+			rawJson = File.getContent(SUtil.getStorageDirectory() + Paths.cooljson('weeks/' + jsonInput)).trim();
 			#else
 			rawJson = Assets.getText(Paths.cooljson('weeks/' + jsonInput)).trim();
 			#end
@@ -539,7 +539,7 @@ class StoryMenuState extends MusicBeatState
 			weekthingy = CoolUtil.coolTextFile(Paths.txt('weeks/weekList'));
 		}
 		#else
-		weekthingy = CoolUtil.coolTextFile(Paths.txt('weeks/weekList'));
+		weekthingy = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'weeks/weekList'));
 		#end
 
 		#if MODS
@@ -557,7 +557,7 @@ class StoryMenuState extends MusicBeatState
 			weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weekthingy[curWeek] + "Difficulties"));
 		}
 		#else
-		weekdiff = CoolUtil.coolTextFile(Paths.txt('weeks/' + weekthingy[curWeek] + "Difficulties"));
+		weekdiff = CoolUtil.coolTextFile(Paths.txt(SUtil.getStorageDirectory() + 'weeks/' + weekthingy[curWeek] + "Difficulties"));
 		#end
 
 		weekDiffs = weekdiff;
