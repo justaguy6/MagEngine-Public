@@ -50,6 +50,12 @@
       "type": "haxelib"
     },
     {
+      "name": "extension-androidtools",
+      "type": "git",
+      "ref": "main",
+      "url": "https://github.com/MAJigsaw77/extension-androidtools"
+    },
+    {
       "name": "flixel-shadertoy-shader",
       "type": "git",
       "dir": null,
