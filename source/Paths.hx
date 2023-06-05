@@ -163,7 +163,7 @@ class Paths
 		}
 		#end
 
-		return SUtil.getStorageDirectory() + 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
 	}
 
 	inline static private function returnSongFile(file:String):Sound
