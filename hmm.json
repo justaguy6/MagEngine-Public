@@ -45,11 +45,9 @@
       "type": "haxelib",
       "version": null
     },
-    
     {
       "name": "polymod",
-      "type": "haxelib",
-      
+      "type": "haxelib"
     },
     {
       "name": "flixel-shadertoy-shader",
@@ -60,3 +58,5 @@
     }
   ]
 }
+
+ 
