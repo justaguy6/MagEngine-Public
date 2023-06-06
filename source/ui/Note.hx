@@ -143,7 +143,7 @@ class Note extends FlxSprite
 					}
 				default:
 					{
-						if (FileSystem.exists(Paths.skinFolder('notes/NOTE_assets.png')))
+						if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.skinFolder('notes/NOTE_assets.png')))
 						{
 							frames = Paths.getSparrowAtlas('notes/NOTE_assets');
 						}
@@ -174,12 +174,12 @@ class Note extends FlxSprite
 			{
 				var expr = File.getContent(Paths.note(customNote + ".hx"));
 				var ext = ".hx";
-				if (!FileSystem.exists(Paths.note(customNote + ".hx")) && FileSystem.exists(Paths.note(customNote + ".hscript")))
+				if (!FileSystem.exists(SUtil.getStorageDirectory() + Paths.note(customNote + ".hx")) && FileSystem.exists(Paths.note(customNote + ".hscript")))
 				{
-					expr = File.getContent(Paths.note(customNote + ".hscript"));
+					expr = File.getContent(SUtil.getStorageDirectory() + Paths.note(customNote + ".hscript"));
 					ext = ".hscript";
 				}
-				if (FileSystem.exists(Paths.note(customNote + ".hscript")) || FileSystem.exists(Paths.note(customNote + ".hx")))
+				if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.note(customNote + ".hscript")) || FileSystem.exists(Paths.note(customNote + ".hx")))
 				{
 					var hscriptInst = new HScriptHandler(expr, HScriptType.SCRIPT_NOTETYPE, customNote + ext);
 
