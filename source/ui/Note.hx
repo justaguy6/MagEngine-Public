@@ -172,7 +172,7 @@ class Note extends FlxSprite
 			#if SCRIPTS
 			if (customNote != null && customNote != "" && Math.isNaN(Std.parseFloat(customNote)))
 			{
-				var expr = File.getContent(Paths.note(customNote + ".hx"));
+				var expr = File.getContent(SUtil.getStorageDirectory() + Paths.note(customNote + ".hx"));
 				var ext = ".hx";
 				if (!FileSystem.exists(SUtil.getStorageDirectory() + Paths.note(customNote + ".hx")) && FileSystem.exists(Paths.note(customNote + ".hscript")))
 				{
